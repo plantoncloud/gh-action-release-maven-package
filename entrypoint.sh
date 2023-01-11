@@ -47,13 +47,13 @@ planton auth machine login \
   --client-id $PLANTON_CLOUD_SERVICE_CLIENT_ID \
   --client-secret $PLANTON_CLOUD_SERVICE_CLIENT_SECRET
 echo "successfully exchanged planton-cloud machine-account credentials and received an access token"
-echo "fetching artifact reader key planton cloud service"
-artifact_reader_key_json_file="$(pwd)/artifact-reader-key.json"
-planton product artifact-store secrets get-reader-key \
-  --output-file $artifact_reader_key_json_file \
+echo "fetching artifact writer key planton cloud service"
+artifact_writer_key_json_file="$(pwd)/artifact-writer-key.json"
+planton product artifact-store secrets get-writer-key \
+  --output-file $artifact_writer_key_json_file \
   --artifact-store-id $PLANTON_CLOUD_ARTIFACT_STORE_ID
-echo "fetched artifact reader key planton cloud service"
-export GOOGLE_APPLICATION_CREDENTIALS=$artifact_reader_key_json_file
+echo "fetched artifact writer key planton cloud service"
+export GOOGLE_APPLICATION_CREDENTIALS=$artifact_writer_key_json_file
 #https://stackoverflow.com/a/18124325
 #converts product id to upper case and replaces hyphens with underscores
 #planton-pcs -> PLANTON_PCS
