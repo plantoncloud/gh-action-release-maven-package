@@ -21,6 +21,9 @@ inputs:
   planton_cloud_artifact_store_maven_repo_url:
     description: 'url of the maven repository of the artifact-store on planton-cloud'
     required: true
+  maven_package_version:
+    description: 'semantic version of the maven package to be used for the release'
+    required: true
 
 runs:
   using: 'docker'
@@ -32,3 +35,4 @@ runs:
     - ${{ inputs.planton_cloud_artifact_store_id }}
     - ${{ inputs.planton_cloud_product_id }}
     - ${{ inputs.planton_cloud_artifact_store_maven_repo_url }}
+    - ${{ inputs.maven_package_version }}
