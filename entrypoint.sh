@@ -62,4 +62,4 @@ export MAVEN_REPO_URL_$transformed_product_id=$PLANTON_CLOUD_ARTIFACT_STORE_MAVE
 #consumer projects of this action are expected to have a Makefile in the root of the repository and also
 # a target with name 'publish
 echo "releasing version: $MAVEN_PACKAGE_VERSION"
-make publish
+make publish version=$MAVEN_PACKAGE_VERSION
